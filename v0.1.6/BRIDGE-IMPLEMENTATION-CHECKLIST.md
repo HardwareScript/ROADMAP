@@ -147,3 +147,19 @@
 
 **Status**: Phase 5 Complete ✅ — Phases 6 & 7 and geometry limitations tracked in `POST-BRIDGE-LIMITATIONS.md`
 **Priority**: High (Core Assembly Completeness)
+
+---
+
+## v0.1.7 Stabilization: Physical Truth Migration
+
+### Continuity & Net Assignment
+- [x] Resolve P41 Disconnected Net issue (SubstrateLayerType::Pour classification)
+- [ ] Fix P43 Unassigned Conductor for component pads (Dynamic net resolution in `pour.rs`)
+
+### Auto-Drill & DRC
+- [ ] Complete Auto-Drill implementation for Contacts in `contact.rs` (Fix P42/Clearance)
+- [ ] Implement Enclosure Breakout / Teardrop logic for via-in-trace scenarios (Fix DRC Enclosure)
+
+### Infrastructure
+- [ ] Support `via` blocks inside `profile` definitions in `hwc-parser`
+- [ ] Transition `AutoViaInserter` to profile-driven via selection
