@@ -33,6 +33,18 @@
   - [x] Added `Self-Enclosure` filtering in analytic DRC.
   - [x] Moved generic via definitions to `@std/profiles/generic.hw`.
 
+- **Phase 8 (Geometric Integrity & Microvia Landing)**: Fully complete (2026-06-03)
+  - [x] **Net-Aware Cutout Filtering**: Vias no longer punch holes in same-net copper pours.
+  - [x] **Z-Span Boundary Fix**: Microvias now terminate at the surface of target inner layers rather than cutting through them.
+  - [x] **Same-Net Handshake (v2)**: Extended Manifold Handshake with **Bounding Box Match Guard** to prevent "Open Box" artifacts.
+  - [x] **Micro-Sinking**: Implemented 500nm Z-offset for via terminations to eliminate coplanar Z-fighting.
+  - [x] **Strategy A Alignment**: Updated architectural roadmap to prioritize 2D Co-Unioning for future manifold exports.
+
+- **Phase 9 (Strategy A: 2D Polygon Unioning)**: Planning (2026-06-03)
+  - [ ] **Roadmap Initialized**: See [2D-POLYGON-UNIONING-ROADMAP.md](./2D-POLYGON-UNIONING-ROADMAP.md) for detailed tasks.
+  - [ ] **Dependency Setup**: Integrate `clipper2` and `earcutr`.
+  - [ ] **Manifold Extrusion**: Implementation of unified copper mesh generation.
+
 ### Progress Snapshot (2026-05-31)
 - **Phase 1 (AST + Parser Surface)**: Fully complete
   - Added `ManufacturingProcess` enum to `MaterialDefinition`

@@ -13,6 +13,12 @@ Instead of exporting raw `add` commands as individual boxes, the exporter will r
 - **Interface Ownership**: If a face exists between two different materials, only one set of triangles is generated, assigned to the higher-precedence material.
 - **Boolean Subtraction**: The lower-precedence material (substrate) is mathematically "hollowed out" to accommodate the higher-precedence material (plates).
 
+### 1.1 Strategy A: 2D Co-Union / 3D Boolean Union (v0.1.8)
+For copper layers (pours, traces, vias), we go beyond simple face culling. We adopt **Strategy A**:
+- **2D Polygon Unioning**: Use a polygon clipper (Vatti algorithm) to merge all copper shapes on the same net into a single contour.
+- **Single Extrusion**: Extrude the unified contour to the layer thickness.
+- **Manifold Result**: The exported GLB contains a single, continuous, non-overlapping solid mesh for the entire net on that layer.
+
 ### 2. The Precedence Hierarchy (The Order of Truth)
 We define a physical precedence levels to resolve material conflicts at shared boundaries:
 
