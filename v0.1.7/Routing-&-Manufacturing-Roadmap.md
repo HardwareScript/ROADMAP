@@ -44,3 +44,22 @@ This roadmap tracks the implementation of the **2.5D Shape-Based Analytic Pathfi
 - [x] **5-Stage Pipeline Integration**: Verify topological sort -> obstacle blitting -> routing -> validation -> export.
 - [x] **Deterministic Build Test**: Ensure identical binary outputs for repeated builds.
 - [x] **glTF Handshake**: Verify `polygonOffset` metadata correctly resolves Z-fighting in Hardware Script Studio. (Implemented via `get_or_create_material` with pattern-based inference)
+
+## Phase 4.5: Port Escape Routing (v0.1.7)
+- [x] **Cardinal Port Escape Syntax**: `exit:` / `enter:` keywords on `route` statements with N/S/E/W directions. (Parser: `parse_route_escape()`, AST: `RouteEscape` struct)
+- [x] **Edge-Offset Heuristic**: Percentage, measurement, and named position overrides along pad edges. (Engine: `EdgeOffset` enum, `resolve_offset_to_ratio()`)
+- [x] **Smart Corner Clamping**: Prevents trace overhang at pad corners via min/max ratio bounds. (Engine: `smart_corner_clamp()`)
+- [x] **Rectangular Pad Escape**: Coordinate-locked escape from rectangular pad bounding boxes. (Engine: `calculate_rect_escape()`)
+- [x] **Circular Pad/Ring Escape**: Radial projection mapping for circular pours and vias. (Engine: `calculate_circular_escape()`)
+- [x] **AutoRouter Integration**: Escape-aware clipping in both direct-route (2-pin) and SDF (multi-pin) paths. (Compiler: `RouteEscapeSpec` keyed by `(start_pin, goal_pin)`)
+- [x] **Spatial Pour Bbox for Vias**: Pin anchors co-located with `contact(Copper)` vias resolve bbox via spatial proximity. (Engine: `get_pour_bbox_at_position()`)
+- [x] **Test Coverage**: 6 test files covering pad→pad, pad→ring, ring→vias, pad→vias, big-via→vias geometries. All passing.
+
+
+### Phase 5: High-Scale Routing Optimization (Post-v1.0)
+
+#### 5.1 Bidirectional A* with Segment Stitching
+When scaling to multi-million net SoC layouts where the Leap-Frog router encounters high congestion, the search space can be optimized by transitioning to a Bidirectional A* search:
+- **Heuristic Balance**: Use symmetric Euclidean distance estimators for both forward and backward frontiers.
+- **Z-Boundary Stitching**: If the frontiers meet on different Z-layers, the meeting node is designated as a mandatory via portal, triggering the via-stamping engine to weld the Z-gap.
+- **Asymmetric Constraint Handling**: Keep-out zone (KOZ) exemptions must be evaluated independently for the start and end frontiers to prevent early search termination.
