@@ -31,6 +31,18 @@
 
 ---
 
+## Phase 5: 4-Mode Shape Design System
+
+- [x] **5.1 AST Extensions**: Added CsgExpression, CsgPrimitive, ShapeGenerator, GeometryBlock, GeometryStatement types to `crates/hwc-parser/src/ast/shape.rs`
+- [x] **5.2 Parser Extensions**: Added geometry block parsing, for-loop parameterization, let bindings, Point(x,y) expressions, CSG expressions, procedural generator calls to `crates/hwc-parser/src/parser/definitions/shape.rs`
+- [x] **5.3 Shape Generators**: Implemented star_generator_contour() and gear_generator_contour() in `crates/hwc-compiler/src/shape_generators.rs`
+- [x] **5.4 Via Integration**: Implemented evaluate_shape_points(), evaluate_nm_expr(), evaluate_pure_math() (with paren fix) in `crates/hwc-compiler/src/auto_via_inserter/library.rs`
+- [x] **5.5 Multi-Shape Stitching**: Multiple shapes in one space via custom contacts with collision detection
+- [x] **5.6 Parameterized Shapes**: All via shapes use width parameter to scale to via diameter
+
+### References
+- [SHAPE-SYSTEM-ARCHITECTURE.md](../../Docs/v0.1.7/SHAPE-SYSTEM-ARCHITECTURE.md)
+
 ## References
 - [2D-POLYGON-UNIONING-IMPLEMENTATION.md](../../Docs/v0.1.7/2D-POLYGON-UNIONING-IMPLEMENTATION.md)
 - [MANIFOLD-EXPORT-RETHINK.md](./MANIFOLD-EXPORT-RETHINK.md)
