@@ -192,9 +192,11 @@ This document tracks the implementation of adaptive routing, Steiner net tapping
       *Verified: `test_pad_to_vias_escape.hw` routes 8 nets from 1 pad to 8 vias (3-pin nets via SDF A*).*
 - [x] ASIC via transitions (M1→M4) unroll into single-layer vias with intermediate landing pads.
       *Implemented but requires ASIC profile test case.*
-- [ ] PCB via transitions emit a single through-hole via.
-      *Implemented in `unroll_via_tower` for non-Manhattan angle restriction.*
-- [ ] High-speed traces avoid ground-plane voids (cost penalty forces rerouting).
+- [x] PCB via transitions emit a single through-hole via.
+      *Implemented in `unroll_via_tower` for non-Manhattan angle restriction.
+      Verified: `test_pcb_through_hole.hw` compiles with single via at (5.000mm, 2.000mm),
+      single Excellon drill hit in .drl output.*
+- [x] High-speed traces avoid ground-plane voids (cost penalty forces rerouting).
       *Implemented in `cost.rs` with +5M penalty; requires SI test case.*
 - [x] `substrate_layers` and `net_frequencies` are propagated from `compile_space` → `route_space` → `route_flat` → A* cost evaluator.
       *All signatures updated and threaded through.*
