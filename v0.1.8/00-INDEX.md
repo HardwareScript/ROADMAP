@@ -25,6 +25,9 @@
 | 08 | `08-DETERMINISM-BUILD.md` | Deterministic Pipeline, i128 Transforms, Stable Hashing, Tie-Breaking | 8/8 — Files exist | ALL 8 DEAD CODE — not wired |
 | 09 | `09-INTEGRATION-RELEASE.md` | Library APIs, Benchmarks, Transition Guide, Weekend Milestones | 25/25 — Complete | Tests pass on old path only |
 | **10** | **`10-WIRING-INTEGRATION-GAPS.md`** | **All pipeline integration work** | **0/71** | **NOT STARTED** |
+| **11** | **`11-ZERO-MAGIC-COMPILER.md`** | **Eliminate hardcoded fallbacks** | **10/10** | **COMPLETE** |
+| **12** | **`12-ERROR-SYSTEM-OVERHAUL.md`** | **Error system overhaul** | — | **COMPLETE** |
+| **13** | **`13-PHYSICAL-SYNTHESIS-GUARDRAILS.md`** | **Routable layers, coplanar P45, interior lockout, via-portal exemption** | **33/41 COMPLETE** | **IN PROGRESS** |
 
 ---
 
