@@ -28,6 +28,8 @@
 | **11** | **`11-ZERO-MAGIC-COMPILER.md`** | **Eliminate hardcoded fallbacks** | **10/10** | **COMPLETE** |
 | **12** | **`12-ERROR-SYSTEM-OVERHAUL.md`** | **Error system overhaul** | — | **COMPLETE** |
 | **13** | **`13-PHYSICAL-SYNTHESIS-GUARDRAILS.md`** | **Routable layers, coplanar P45, interior lockout, via-portal exemption** | **33/41 COMPLETE** | **IN PROGRESS** |
+| **14** | **`14-VOXEL-FUNCTION-REMOVAL.md`** | **Legacy voxel-grid function removal & EntityGraph native migration** | **77/77** | **COMPLETE** |
+| **15** | **`15-DRC-SIMPLIFICATION.md`** | **DRC simplification: rule-based geometric validator, R*-tree clearance, current-density check** | **0/68** | **NOT STARTED** |
 
 ---
 
@@ -56,7 +58,9 @@
      ├── 10.8 Deterministic systems → Live path
      ├── 10.9 Salsa query engine → Pipeline
      ├── 10.10 Post-routing manufacturing
-     └── 10.11 Test suite rewrite
+      ├── 10.11 Test suite rewrite
+      ├── 14 Voxel function removal ✓ COMPLETE
+      └── 15 DRC simplification (after 14 — replaces 04 verification with rule-based DRC)
 ```
 
 ## Implementation Order
@@ -68,6 +72,8 @@
 5. **10.7** — rkyv lockfile → Compiler
 6. **10.8–10.10** — Deterministic, Salsa, manufacturing
 7. **10.11** — Test suite rewrite
+8. **14** — Voxel function removal (after all 10.x integration complete)
+9. **15** — DRC simplification (after 14 — replaces broken physics with PDK rule-based checks)
 
 ## Progress Summary
 
@@ -75,7 +81,9 @@
 |--------|-------|
 | Module implementation (01–09) | **182/186 — modules built** |
 | Pipeline integration (10) | **71/71 — ALL WIRED** |
+| Voxel function removal (14) | **77/77 — COMPLETE** |
+| DRC simplification (15) | **0/68 — NOT STARTED** |
 | v0.1.8 features usable in live path | **12 of 12** |
-| Grid removed from engine | **YES** — `voxel_grid` field removed from `HardwareSpace` |
+| Grid removed from engine | **COMPLETE** — `voxel_grid` field removed; all 18+ legacy functions rewritten to EntityGraph-native (see Roadmap 14) |
 | Test files compilable with v0.1.8 syntax | **1** (`test_complex_hybrid_pcb.hw` with `resolution:` only) |
 | Test suite | **493/494 pass** (1 pre-existing file-not-found failure) |
