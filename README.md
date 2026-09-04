@@ -203,3 +203,22 @@ Current release. Two major thrusts:
 | `PTH_IMPLEMENTATION_GUIDE.md` | `ROOT/` | Plated Through-Hole via hot-air solder leveling — technique and use with Hardware Script |
 | `TESTING-AND-BUILD-STANDARDS.md` | `v0.1.2/`, `v0.1.4/` | Build conventions, test infrastructure, and quality gates |
 | `SYSTEM-FRAGMENTATION.md` | `v0.1.2/`, `v0.1.4/` | Cross-system fragmentation analysis with evolution across versions |
+
+---
+
+## License
+
+This documentation is licensed under the **Creative Commons Attribution 4.0 International License (CC-BY-4.0)**.
+
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
+
+Under the following terms:
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made
+
+See the [LICENSE](LICENSE) file for the full legal text, or visit [https://creativecommons.org/licenses/by/4.0/](https://creativecommons.org/licenses/by/4.0/)
+
+**Copyright © 2024-2026 Olowookere Olamide and HardwareScript Contributors**
+
+**Note**: This license applies to the roadmap documentation only. The Hardware Script compiler toolchain (`hwc`) and related software are licensed separately under AGPLv3 + Commercial License. See the main repository for software licensing details.
