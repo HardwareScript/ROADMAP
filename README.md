@@ -1,3 +1,19 @@
+> [!CAUTION]
+> ## ⚰️ PROJECT PERMANENTLY TERMINATED — SEPTEMBER 2026
+>
+> **HardwareScript has been permanently shut down and archived.**
+>
+> After 9 months of development, the project was permanently terminated. All roadmaps, gap analyses, and implementation plans in this directory are **permanently abandoned** — none of the work tracked here will ever be completed.
+>
+> - These documents describe a **cancelled compiler** and a **cancelled product**.
+> - **No further development, issues, or PRs will be accepted.**
+>
+> For the full technical post-mortem, see [`Docs/End/Final-Status.md`](../Docs/End/Final-Status.md).
+>
+> *HardwareScript Architecture Team — September 2026*
+
+---
+
 # Hardware Script — ROADMAP
 
 This directory contains the **official implementation roadmaps, gap analyses, and architectural guides** for the [Hardware Script](https://github.com/hardware-script) compiler toolchain and its ecosystem of tools (HSM, HWC, etc.).
